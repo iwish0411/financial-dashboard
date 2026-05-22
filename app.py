@@ -159,12 +159,7 @@ st.markdown("""
 # =========================
 
 def metric_card(label, value, css_class=""):
-    st.markdown(f"""
-    <div class="metric-card">
-        <div class="metric-label">{label}</div>
-        <div class="metric-value {css_class}">{value}</div>
-    </div>
-    """, unsafe_allow_html=True)
+    st.metric(label=label, value=value)
 
 
 def calculate_metrics(price_series, risk_free_rate_percent):
@@ -758,9 +753,12 @@ if show_raw_data:
 # 底部水印
 # =========================
 
-st.markdown("""
-<div class="watermark">
-    <span>作者：小新SCX</span><br>
-    Financial Analytics Dashboard
-</div>
-""", unsafe_allow_html=True)
+st.divider()
+st.markdown(
+    "<h2 style='text-align:center; color:#94a3b8;'>小新SCX</h2>",
+    unsafe_allow_html=True
+)
+st.markdown(
+    "<p style='text-align:center; color:#64748b;'>Financial Analytics Dashboard</p >",
+    unsafe_allow_html=True
+)
